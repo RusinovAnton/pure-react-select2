@@ -306,15 +306,13 @@ export class Select extends Component {
     })
   }
 
-  shouldComponentUpdate = ({ error, disabled, value, children }, nextState) => {
-    return (
-      (error !== this.props.error && error !== this.state.error)
-      || (disabled !== this.props.disabled)
-      || (value !== this.state.value)
-      || !isEqual(children, this.props.children)
-      || !isEqual(nextState, this.state)
-    )
-  }
+  shouldComponentUpdate = ({ error, disabled, value, children }, nextState) => (
+    (error !== this.props.error && error !== this.state.error)
+    || (disabled !== this.props.disabled)
+    || (value !== this.state.value)
+    || !isEqual(children, this.props.children)
+    || !isEqual(nextState, this.state)
+  )
 
   componentDidMount = () => {
     const { autoFocus, request } = this.props
