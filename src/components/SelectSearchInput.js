@@ -21,7 +21,7 @@ const SelectSearchInput = ({ onClick, onKeyDown, isPending, ...props }, // eslin
              autoCorrect='off'
              autoCapitalize='off'
              spellCheck='false'
-             onKeyDown={ filterKeyDowns }
+             onKeyDown={ stopPropagation(filterKeyDowns) }
              onClick={ stopPropagation() }
              {...props}/>
       {/* { isPending && <span className={`${cssClassNameSelector}__loader`}/> } */}
